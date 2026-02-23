@@ -1,0 +1,10 @@
+# Node
+website/node_modules/
+website/.next/
+website/.env
+website/.env.local
+website/.env.production
+
+# Misc
+.DS_Store
+*.log
