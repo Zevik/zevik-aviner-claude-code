@@ -24,8 +24,8 @@ import {
 const orbitron = Orbitron({ subsets: ['latin'], variable: '--font-orbitron', display: 'swap' });
 const oxanium = Oxanium({ subsets: ['latin'], variable: '--font-oxanium', display: 'swap' });
 const heebo = Heebo({ subsets: ['hebrew', 'latin'], variable: '--font-heebo', display: 'swap' });
-const rubikMonoOne = Rubik_Mono_One({ subsets: ['hebrew', 'latin'], weight: '400', variable: '--font-rubik-mono', display: 'swap' });
-const varelaRound = Varela_Round({ subsets: ['hebrew', 'latin'], weight: '400', variable: '--font-varela', display: 'swap' });
+const rubikMonoOne = Rubik_Mono_One({ subsets: ['latin'], weight: '400', variable: '--font-rubik-mono', display: 'swap' });
+const varelaRound = Varela_Round({ subsets: ['latin'], weight: '400', variable: '--font-varela', display: 'swap' });
 const rubik = Rubik({ subsets: ['hebrew', 'latin'], variable: '--font-rubik', display: 'swap' });
 const cormorant = Cormorant_Garamond({ subsets: ['latin'], weight: ['300', '400', '600', '700'], variable: '--font-cormorant', display: 'swap' });
 const lora = Lora({ subsets: ['latin'], variable: '--font-lora', display: 'swap' });
