@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'משרד פרסום ג׳רוזיטי',
-  description: 'פרסום אורגני בקהילות הפייסבוק הגדולות של ירושלים – ג׳רוזיטי',
+  title: 'משרד פרסום ג׳רוזסיטי',
+  description: 'פרסום אורגני בקהילות הפייסבוק הגדולות של ירושלים – ג׳רוזסיטי',
 };
 
 export default function AdvertisingPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold mb-3 text-gray-900">ג׳רוזיטי – הסיפור הירושלמי הופך לקמפיין</h1>
+      <h1 className="text-4xl font-bold mb-3 text-gray-900">ג׳רוזסיטי – הסיפור הירושלמי הופך לקמפיין</h1>
       <p className="text-xl text-blue-600 font-semibold mb-10">פרסום אורגני בקהילות הפייסבוק הגדולות של ירושלים</p>
 
       <div className="bg-blue-50 rounded-2xl p-8 mb-10">
         <p className="text-lg text-gray-700 leading-relaxed mb-4">אם הלקוחות שלך נמצאים בירושלים – הם כבר נמצאים אצלנו.</p>
-        <p className="text-gray-700 leading-relaxed mb-4">ג׳רוזיטי מתמחה בשיווק אורגני בקבוצות הפייסבוק הירושלמיות. אנחנו מנהלים את רשת קבוצות התלתן ♣ – הרשת החברתית הגדולה והמשפיעה בירושלים, עם למעלה מ-80 קבוצות פייסבוק, מעל 30 קבוצות וואטסאפ שכונתיות, ו-600,000 חברים פעילים.</p>
+        <p className="text-gray-700 leading-relaxed mb-4">ג׳רוזסיטי מתמחה בשיווק אורגני בקבוצות הפייסבוק הירושלמיות. אנחנו מנהלים את רשת קבוצות התלתן ♣ – הרשת החברתית הגדולה והמשפיעה בירושלים, עם למעלה מ-80 קבוצות פייסבוק, מעל 30 קבוצות וואטסאפ שכונתיות, ו-600,000 חברים פעילים.</p>
         <p className="text-gray-700 leading-relaxed">הקבוצה המרכזית &quot;ירושלמים וירושלמיות&quot; לבדה מונה מעל 200,000 חברים עם חשיפה יומית של כ-90,000 איש.</p>
       </div>
 

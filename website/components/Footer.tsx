@@ -24,7 +24,7 @@ export default function Footer() {
               <li><a href="https://linkedin.com/in/zevikaviner" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
               <li><a href="https://github.com/zevikaviner" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
               <li><a href="https://facebook.com/zevik.aviner" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a></li>
-              <li><a href="https://jerus.city" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ג׳רוזיטי</a></li>
+              <li><a href="https://jerus.city" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ג׳רוזסיטי</a></li>
             </ul>
           </div>
         </div>
