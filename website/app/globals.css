@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════
+   THEME CSS VARIABLES – DEFAULT (naive)
+   ═══════════════════════════════════════════════ */
 :root {
   --primary: #2563eb;
   --primary-dark: #1d4ed8;
@@ -10,20 +12,716 @@
   --foreground: #0f172a;
   --muted: #f8fafc;
   --muted-foreground: #64748b;
+
+  /* Theme dynamic vars */
+  --bg-color: #FFEFD5;
+  --text-color: #2F4F4F;
+  --accent-color: #FF6347;
+  --card-bg: #fff8f0;
+  --font-main: var(--font-amatic), cursive;
+  --font-secondary: var(--font-rubik), sans-serif;
 }
 
+/* ═══════════════════════════════════════════════
+   BASE STYLES – use dynamic vars
+   ═══════════════════════════════════════════════ */
 html, body {
   direction: rtl;
-  font-family: 'Rubik', sans-serif;
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-secondary);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 * {
   box-sizing: border-box;
 }
 
-/* תוכן מאמרים */
+/* ═══════════════════════════════════════════════
+   THEME 1 – 80s Anime
+   ═══════════════════════════════════════════════ */
+[data-theme="anime"] {
+  --bg-color: #1A0033;
+  --text-color: #E0E0E0;
+  --accent-color: #FF00FF;
+  --card-bg: #2a0050;
+  --font-main: var(--font-orbitron), monospace;
+  --font-secondary: var(--font-oxanium), monospace;
+  --primary: #FF00FF;
+  --primary-dark: #cc00cc;
+  --border: #00FFFF44;
+  --muted: #2a0050;
+  --muted-foreground: #00FFFF;
+}
+
+[data-theme="anime"] body {
+  font-family: var(--font-oxanium), monospace;
+}
+
+[data-theme="anime"] h1,
+[data-theme="anime"] h2,
+[data-theme="anime"] h3 {
+  font-family: var(--font-orbitron), monospace;
+  color: #00FFFF;
+  text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF55;
+}
+
+[data-theme="anime"] .card {
+  background: var(--card-bg);
+  border: 1px solid #FF00FF44;
+  box-shadow: 0 0 12px #FF00FF22;
+}
+
+[data-theme="anime"] .btn-primary {
+  background: linear-gradient(135deg, #FF00FF, #00FFFF);
+  color: #1A0033;
+  font-family: var(--font-orbitron), monospace;
+}
+
+[data-theme="anime"] nav {
+  background: #0d001a !important;
+  border-color: #FF00FF44 !important;
+}
+
+[data-theme="anime"] footer {
+  background: #0d001a !important;
+}
+
+/* ═══════════════════════════════════════════════
+   THEME 2 – Fluxus
+   ═══════════════════════════════════════════════ */
+[data-theme="fluxus"] {
+  --bg-color: #0a0a0a;
+  --text-color: #f0f0f0;
+  --accent-color: #f8e11b;
+  --card-bg: #1a1a1a;
+  --font-main: var(--font-rubik-mono), monospace;
+  --font-secondary: var(--font-heebo), sans-serif;
+  --primary: #f8e11b;
+  --primary-dark: #d4be00;
+  --border: #f8e11b44;
+  --muted: #1a1a1a;
+  --muted-foreground: #888;
+}
+
+[data-theme="fluxus"] body {
+  font-family: var(--font-heebo), sans-serif;
+}
+
+[data-theme="fluxus"] h1,
+[data-theme="fluxus"] h2,
+[data-theme="fluxus"] h3 {
+  font-family: var(--font-rubik-mono), monospace;
+  color: #f8e11b;
+  letter-spacing: -0.02em;
+}
+
+[data-theme="fluxus"] .card {
+  background: var(--card-bg);
+  border: 2px solid #f8e11b;
+  border-radius: 0;
+}
+
+[data-theme="fluxus"] .btn-primary {
+  background: #f8e11b;
+  color: #0a0a0a;
+  border-radius: 0;
+  font-family: var(--font-rubik-mono), monospace;
+}
+
+[data-theme="fluxus"] nav {
+  background: #0a0a0a !important;
+  border-color: #f8e11b44 !important;
+}
+
+[data-theme="fluxus"] footer {
+  background: #050505 !important;
+}
+
+/* ═══════════════════════════════════════════════
+   THEME 3 – Action Painting
+   ═══════════════════════════════════════════════ */
+[data-theme="action"] {
+  --bg-color: #0a0a0a;
+  --text-color: #f3f4f6;
+  --accent-color: #ef4444;
+  --card-bg: #111111;
+  --font-main: var(--font-rubik), sans-serif;
+  --font-secondary: var(--font-rubik), sans-serif;
+  --primary: #ef4444;
+  --primary-dark: #b91c1c;
+  --border: #ef444444;
+  --muted: #1a1a1a;
+  --muted-foreground: #9ca3af;
+}
+
+[data-theme="action"] body {
+  font-family: var(--font-rubik), sans-serif;
+}
+
+[data-theme="action"] h1,
+[data-theme="action"] h2,
+[data-theme="action"] h3 {
+  font-family: var(--font-rubik), sans-serif;
+  font-weight: 900;
+  color: #f3f4f6;
+}
+
+[data-theme="action"] .card {
+  background: var(--card-bg);
+  border: none;
+  box-shadow: 4px 4px 0 #ef4444, -2px -2px 0 #3b82f6;
+}
+
+[data-theme="action"] .btn-primary {
+  background: #ef4444;
+  box-shadow: 3px 3px 0 #3b82f6;
+}
+
+[data-theme="action"] nav {
+  background: #0a0a0a !important;
+  border-color: #ef444422 !important;
+}
+
+[data-theme="action"] footer {
+  background: #050505 !important;
+}
+
+/* ═══════════════════════════════════════════════
+   THEME 4 – Outsider Art
+   ═══════════════════════════════════════════════ */
+[data-theme="outsider"] {
+  --bg-color: #f5f0e8;
+  --text-color: #1a1a1a;
+  --accent-color: #c0392b;
+  --card-bg: #ede8e0;
+  --font-main: var(--font-rubik-mono), monospace;
+  --font-secondary: var(--font-heebo), sans-serif;
+  --primary: #c0392b;
+  --primary-dark: #922b21;
+  --border: #1a1a1a;
+  --muted: #ede8e0;
+  --muted-foreground: #555;
+}
+
+[data-theme="outsider"] body {
+  font-family: var(--font-heebo), sans-serif;
+}
+
+[data-theme="outsider"] h1,
+[data-theme="outsider"] h2,
+[data-theme="outsider"] h3 {
+  font-family: var(--font-rubik-mono), monospace;
+  color: #1a1a1a;
+  border-bottom: 3px solid #1a1a1a;
+  padding-bottom: 0.25rem;
+}
+
+[data-theme="outsider"] .card {
+  background: var(--card-bg);
+  border: 3px solid #1a1a1a;
+  border-radius: 2px;
+  box-shadow: 5px 5px 0 #1a1a1a;
+}
+
+[data-theme="outsider"] .btn-primary {
+  background: #1a1a1a;
+  color: #f5f0e8;
+  border: 3px solid #1a1a1a;
+  box-shadow: 4px 4px 0 #c0392b;
+  border-radius: 2px;
+}
+
+[data-theme="outsider"] nav {
+  background: #ede8e0 !important;
+  border-bottom: 3px solid #1a1a1a !important;
+}
+
+/* ═══════════════════════════════════════════════
+   THEME 5 – Etching
+   ═══════════════════════════════════════════════ */
+[data-theme="etching"] {
+  --bg-color: #101010;
+  --text-color: #e0e0e0;
+  --accent-color: #b38e5d;
+  --card-bg: #1a1a1a;
+  --font-main: var(--font-cormorant), serif;
+  --font-secondary: var(--font-lora), serif;
+  --primary: #b38e5d;
+  --primary-dark: #8a6c42;
+  --border: #b38e5d44;
+  --muted: #1a1a1a;
+  --muted-foreground: #aaa;
+}
+
+[data-theme="etching"] body {
+  font-family: var(--font-lora), serif;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(179,142,93,0.03) 2px,
+    rgba(179,142,93,0.03) 4px
+  );
+}
+
+[data-theme="etching"] h1,
+[data-theme="etching"] h2,
+[data-theme="etching"] h3 {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: #b38e5d;
+}
+
+[data-theme="etching"] .card {
+  background: var(--card-bg);
+  border: 1px solid #b38e5d55;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.5);
+}
+
+[data-theme="etching"] .btn-primary {
+  background: transparent;
+  border: 1px solid #b38e5d;
+  color: #b38e5d;
+  font-family: var(--font-cormorant), serif;
+  letter-spacing: 0.15em;
+}
+
+[data-theme="etching"] .btn-primary:hover {
+  background: #b38e5d;
+  color: #101010;
+}
+
+[data-theme="etching"] nav {
+  background: #0a0a0a !important;
+  border-color: #b38e5d33 !important;
+}
+
+[data-theme="etching"] footer {
+  background: #080808 !important;
+}
+
+[data-theme="etching"] input,
+[data-theme="etching"] textarea {
+  background: #1a1a1a;
+  border: 1px solid #b38e5d55;
+  color: #e0e0e0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-theme="etching"] input:focus,
+[data-theme="etching"] textarea:focus {
+  border-color: #b38e5d;
+  box-shadow: 0 0 8px #b38e5d44;
+  outline: none;
+}
+
+/* ═══════════════════════════════════════════════
+   THEME 6 – Insular Art
+   ═══════════════════════════════════════════════ */
+[data-theme="insular"] {
+  --bg-color: #FDF5E6;
+  --text-color: #1A1A1A;
+  --accent-color: #B8860B;
+  --card-bg: #f5ead5;
+  --font-main: var(--font-frank), serif;
+  --font-secondary: var(--font-frank), serif;
+  --primary: #B8860B;
+  --primary-dark: #8B6508;
+  --border: #B8860B55;
+  --muted: #f5ead5;
+  --muted-foreground: #5a4a2a;
+}
+
+[data-theme="insular"] body {
+  font-family: var(--font-frank), serif;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(184,134,11,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(184,134,11,0.05) 0%, transparent 50%);
+}
+
+[data-theme="insular"] h1,
+[data-theme="insular"] h2,
+[data-theme="insular"] h3 {
+  font-family: var(--font-frank), serif;
+  color: #B8860B;
+  text-shadow: 1px 1px 0 rgba(184,134,11,0.2);
+}
+
+[data-theme="insular"] .card {
+  background: var(--card-bg);
+  border: 2px solid #B8860B55;
+  box-shadow: 0 2px 8px rgba(184,134,11,0.15);
+}
+
+[data-theme="insular"] .btn-primary {
+  background: #B8860B;
+  color: #FDF5E6;
+  border-radius: 4px;
+}
+
+[data-theme="insular"] nav {
+  background: #f0e4c8 !important;
+  border-color: #B8860B44 !important;
+}
+
+[data-theme="insular"] footer {
+  background: #e8d9b4 !important;
+}
+
+/* ═══════════════════════════════════════════════
+   THEME 7 – Naive Art (Default)
+   ═══════════════════════════════════════════════ */
+[data-theme="naive"] {
+  --bg-color: #FFEFD5;
+  --text-color: #2F4F4F;
+  --accent-color: #FF6347;
+  --card-bg: #fff8f0;
+  --font-main: var(--font-amatic), cursive;
+  --font-secondary: var(--font-rubik), sans-serif;
+  --primary: #FF6347;
+  --primary-dark: #e5533d;
+  --border: #FF634744;
+  --muted: #fff8f0;
+  --muted-foreground: #5a7272;
+}
+
+[data-theme="naive"] body {
+  font-family: var(--font-rubik), sans-serif;
+}
+
+[data-theme="naive"] h1,
+[data-theme="naive"] h2,
+[data-theme="naive"] h3 {
+  font-family: var(--font-amatic), cursive;
+  font-size: 1.3em;
+  color: #2F4F4F;
+  letter-spacing: 0.05em;
+}
+
+[data-theme="naive"] .card {
+  background: var(--card-bg);
+  border: 2px solid #FF634733;
+  box-shadow: 3px 3px 0 #FF634722;
+}
+
+[data-theme="naive"] .btn-primary {
+  background: #FF6347;
+  border-radius: 20px;
+}
+
+[data-theme="naive"] nav {
+  background: #fff4e8 !important;
+  border-color: #FF634733 !important;
+}
+
+/* ═══════════════════════════════════════════════
+   THEME 8 – Pop Art (Roy Lichtenstein)
+   ═══════════════════════════════════════════════ */
+[data-theme="popart"] {
+  --bg-color: #FFEB3B;
+  --text-color: #000000;
+  --accent-color: #E53935;
+  --card-bg: #ffffff;
+  --font-main: var(--font-bangers), cursive;
+  --font-secondary: var(--font-heebo), sans-serif;
+  --primary: #E53935;
+  --primary-dark: #b71c1c;
+  --border: #000000;
+  --muted: #ffffff;
+  --muted-foreground: #333;
+}
+
+[data-theme="popart"] body {
+  font-family: var(--font-heebo), sans-serif;
+}
+
+[data-theme="popart"] h1,
+[data-theme="popart"] h2,
+[data-theme="popart"] h3 {
+  font-family: var(--font-bangers), cursive;
+  color: #E53935;
+  letter-spacing: 0.05em;
+  -webkit-text-stroke: 1px #000;
+  text-stroke: 1px #000;
+  font-size: 1.4em;
+}
+
+[data-theme="popart"] .card {
+  background: #ffffff;
+  border: 3px solid #000000;
+  border-radius: 0;
+  box-shadow: 5px 5px 0 #000;
+}
+
+[data-theme="popart"] .btn-primary {
+  background: #E53935;
+  border: 3px solid #000;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #000;
+  font-family: var(--font-bangers), cursive;
+  letter-spacing: 0.05em;
+  color: #FFEB3B;
+}
+
+[data-theme="popart"] nav {
+  background: #FFEB3B !important;
+  border-bottom: 3px solid #000 !important;
+}
+
+[data-theme="popart"] footer {
+  background: #E53935 !important;
+  color: #FFEB3B !important;
+  border-top: 3px solid #000 !important;
+}
+
+/* Ben-Day dots background pattern */
+.ben-day-dots {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.15) 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+[data-theme="popart"] main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════
+   THEME 9 – Fauvism
+   ═══════════════════════════════════════════════ */
+[data-theme="fauvism"] {
+  --bg-color: #fff5e6;
+  --text-color: #1a1a1a;
+  --accent-color: #e74c3c;
+  --card-bg: #fff0e0;
+  --font-main: var(--font-permanent-marker), cursive;
+  --font-secondary: var(--font-assistant), sans-serif;
+  --primary: #e74c3c;
+  --primary-dark: #c0392b;
+  --border: #e74c3c44;
+  --muted: #fff0e0;
+  --muted-foreground: #555;
+}
+
+[data-theme="fauvism"] body {
+  font-family: var(--font-assistant), sans-serif;
+}
+
+[data-theme="fauvism"] h1,
+[data-theme="fauvism"] h2,
+[data-theme="fauvism"] h3 {
+  font-family: var(--font-permanent-marker), cursive;
+  color: #e74c3c;
+}
+
+[data-theme="fauvism"] .card {
+  background: var(--card-bg);
+  border: 2px solid #e74c3c44;
+  position: relative;
+  overflow: visible;
+}
+
+[data-theme="fauvism"] .btn-primary {
+  background: #e74c3c;
+  border-radius: 4px;
+}
+
+[data-theme="fauvism"] nav {
+  background: #fff0e0 !important;
+  border-color: #e74c3c33 !important;
+}
+
+/* Fauvist abstract shapes layer */
+.fauvism-shapes {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.fauvism-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.18;
+  transition: transform 5s ease-in-out, background 5s ease-in-out;
+}
+
+[data-theme="fauvism"] main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════
+   THEME 10 – Ukiyo-e
+   ═══════════════════════════════════════════════ */
+[data-theme="ukiyoe"] {
+  --bg-color: #f5ead5;
+  --text-color: #1a1008;
+  --accent-color: #8B0000;
+  --card-bg: #efe4cc;
+  --font-main: var(--font-frank), serif;
+  --font-secondary: var(--font-frank), serif;
+  --primary: #8B0000;
+  --primary-dark: #660000;
+  --border: #8B000044;
+  --muted: #efe4cc;
+  --muted-foreground: #5a4030;
+}
+
+[data-theme="ukiyoe"] body {
+  font-family: var(--font-frank), serif;
+  background-image:
+    linear-gradient(180deg, rgba(139,0,0,0.03) 0%, transparent 100%);
+}
+
+[data-theme="ukiyoe"] h1,
+[data-theme="ukiyoe"] h2,
+[data-theme="ukiyoe"] h3 {
+  font-family: var(--font-frank), serif;
+  color: #8B0000;
+  letter-spacing: 0.05em;
+}
+
+[data-theme="ukiyoe"] .card {
+  background: var(--card-bg);
+  border: 1px solid #8B000033;
+  box-shadow: 2px 2px 8px rgba(139,0,0,0.1);
+}
+
+[data-theme="ukiyoe"] .btn-primary {
+  background: #8B0000;
+  color: #f5ead5;
+  border-radius: 2px;
+}
+
+[data-theme="ukiyoe"] nav {
+  background: #ede3cc !important;
+  border-color: #8B000033 !important;
+}
+
+[data-theme="ukiyoe"] footer {
+  background: #e5d9be !important;
+}
+
+/* Ukiyo-e cursor shrink on buttons */
+[data-theme="ukiyoe"] button,
+[data-theme="ukiyoe"] a {
+  transition: transform 0.2s ease;
+}
+
+[data-theme="ukiyoe"] button:hover,
+[data-theme="ukiyoe"] a:hover {
+  transform: scale(0.97);
+}
+
+/* ═══════════════════════════════════════════════
+   SHARED ANIMATED REVEAL
+   ═══════════════════════════════════════════════ */
+.theme-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.theme-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.theme-reveal-bounce {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: opacity 0.5s cubic-bezier(0.34,1.56,0.64,1), transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.theme-reveal-bounce.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.theme-reveal-blur {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s ease;
+}
+
+.theme-reveal-blur.revealed {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════
+   POP ART CURSOR
+   ═══════════════════════════════════════════════ */
+.popart-cursor {
+  position: fixed;
+  width: 28px;
+  height: 28px;
+  border: 3px solid #000;
+  border-radius: 50%;
+  background: rgba(229,57,53,0.3);
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s linear;
+}
+
+/* ═══════════════════════════════════════════════
+   UKIYO-E CURSOR
+   ═══════════════════════════════════════════════ */
+.ukiyoe-cursor {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #8B0000;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.12s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.ukiyoe-cursor.hover {
+  width: 10px;
+  height: 10px;
+}
+
+/* ═══════════════════════════════════════════════
+   PAINT SPLATTERS (action)
+   ═══════════════════════════════════════════════ */
+.paint-splatter {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: splatterFloat 8s ease-in-out infinite;
+}
+
+@keyframes splatterFloat {
+  0%   { opacity: 0; transform: scale(0) rotate(0deg); }
+  20%  { opacity: 0.6; transform: scale(1) rotate(45deg); }
+  80%  { opacity: 0.4; transform: scale(1.1) rotate(90deg); }
+  100% { opacity: 0; transform: scale(0.5) rotate(180deg); }
+}
+
+[data-theme="action"] main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════
+   EXISTING STYLES (preserved)
+   ═══════════════════════════════════════════════ */
 .rtl-content {
   direction: rtl;
   text-align: right;
@@ -59,7 +757,6 @@ html, body {
   color: var(--primary-dark);
 }
 
-/* קוד – תמיד LTR */
 :not(pre) > code {
   direction: ltr;
   text-align: left;
@@ -83,7 +780,6 @@ pre {
   font-size: 0.875em;
 }
 
-/* blockquote – גבול ימין */
 .rtl-content blockquote {
   border-right: 4px solid var(--primary);
   border-left: none;
@@ -95,7 +791,6 @@ pre {
   font-style: italic;
 }
 
-/* רשימות – padding ימין */
 .rtl-content ul,
 .rtl-content ol {
   padding-right: 2rem;
@@ -108,7 +803,6 @@ pre {
   line-height: 1.7;
 }
 
-/* טבלאות רספונסיביות */
 .table-responsive-wrapper {
   overflow-x: auto;
   border: 1px solid var(--border);
@@ -133,15 +827,13 @@ pre {
   font-weight: 600;
 }
 
-/* overflow למניעת שבירת layout */
 #content-container {
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
 
-/* כרטיסים */
 .card {
-  background: white;
+  background: var(--card-bg, white);
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
@@ -152,7 +844,6 @@ pre {
   transform: translateY(-2px);
 }
 
-/* כפתורים */
 .btn-primary {
   background-color: var(--primary);
   color: white;
@@ -189,7 +880,6 @@ pre {
   color: white;
 }
 
-/* הדפסה */
 @media print {
   nav, footer, .no-print {
     display: none !important;
