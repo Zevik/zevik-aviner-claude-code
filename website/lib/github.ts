@@ -7,7 +7,7 @@ export async function pushPostToGitHub(slug: string, content: string): Promise<v
     throw new Error('GitHub environment variables not set');
   }
 
-  const filePath = `content/posts/${slug}.mdx`;
+  const filePath = `website/content/posts/${slug}.mdx`;
   const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`;
 
   const headers = {
